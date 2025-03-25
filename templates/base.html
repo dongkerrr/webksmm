@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Website</title>
+    <link
+      href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="../static/style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="navbar">
+        <div class="logo-name">
+          <img class="logo-ksm" src="../static/images/logo.jpg" alt="" />
+        </div>
+        <div class="btn-hamburger" id="hamburgerButton">
+          <button>&#9776;</button>
+        </div>
+        <div class="navbar-sidgi" id="navigationDrawer">
+          <ul>
+            <li><a href="/home">Beranda</a></li>
+            <li><a href="/content">Produk</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <script>
+      document
+        .getElementById("hamburgerButton")
+        .addEventListener("click", () => {
+          const navDrawer = document.getElementById("navigationDrawer");
+          navDrawer.classList.toggle("active");
+        });
+    </script>
+
+    <div id="app"></div>
+
+    <!-- Chatbot Section -->
+    <div class="container">
+      <div class="chatbox">
+        <div class="chatbox__support">
+          <div class="chatbox__header">
+            <div class="chatbox__image--header">
+              <img
+                src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png"
+                alt="image"
+              />
+            </div>
+            <div class="chatbox__content--header">
+              <h4 class="chatbox__heading--header">Chat Support</h4>
+              <p class="chatbox__description--header">
+                Hi, <span id="displayUserName"></span>! Bagaimana saya bisa
+                membantu?
+              </p>
+            </div>
+          </div>
+
+          <div class="chatbox__user-info">
+            <input
+              type="text"
+              id="userName"
+              placeholder="Masukkan Nama Anda"
+              required
+            />
+            <input
+              type="text"
+              id="userWA"
+              placeholder="Masukkan Nomor WhatsApp"
+              required
+            />
+            <button onclick="saveUserInfo()">Mulai Chat</button>
+          </div>
+
+          <div class="chatbox__messages" style="display: none">
+            <div class="messages__content">
+              <p>Silahkan masukkan pertanyaan...</p>
+            </div>
+          </div>
+
+          <div class="chatbox__footer">
+            <input type="text" id="chatInput" placeholder="Tulis pesan..." />
+            <button class="chatbox__send--footer send__button">Kirim</button>
+        </div>
+        
+        </div>
+        <div class="chatbox__button">
+          <button><img src="../static/images/chatbox-icon.svg" /></button>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      style="
+        width: 100%;
+        background-color: #1d2d5b;
+        color: #fff;
+        padding: 40px 20px;
+        box-sizing: border-box;
+        clear: both;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      "
+    >
+      <div
+        style="
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: flex-start;
+        "
+      >
+        <!-- Kolom Kiri -->
+        <div style="flex: 3; min-width: 400px; margin-bottom: 20px">
+          <h2 style="font-weight: bold; margin-bottom: 15px">
+            PT. Kolega Surya Medika
+          </h2>
+          <ul
+            style="
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              line-height: 1.8;
+              font-size: 14px;
+            "
+          >
+            <li>
+              Ruko New Mariposa Blok FH. 51-52 Jl. Jlopo No. 18 Gedangan,
+              Grogol, Sukoharjo
+            </li>
+            <li>Senin - Jumat, 08:00 - 16:00 WIB (GMT+07.00)</li>
+            <li>Telp : (0271) 572 2059</li>
+            <li>Wa : 0852 5757 4447</li>
+            <li>Email : kolegasuryamedika@yahoo.com</li>
+            <li>
+              <a
+                href="https://www.google.com/maps/search/Ruko+New+Mariposa+Blok+FH.+51-52+Jl.+Jlopo+No.+18+Gedangan,+Grogol,+Sukoharjo/@-7.6100743,110.8002442,17z/data=!3m1!4b1?hl=id&entry=ttu&g_ep=EgoyMDI1MDEyMC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                style="color: #fff; text-decoration: none"
+              >
+                Lihat di Google Maps
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kolom Kanan -->
+        <div
+          style="
+            flex: 1;
+            min-width: 200px;
+            padding-top: 45px;
+            margin-bottom: 20px;
+          "
+        >
+          <h5 style="font-weight: bold; margin-bottom: 15px">Ikuti Kami</h5>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              style="color: #fff; font-size: 20px"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              style="color: #fff; font-size: 20px"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              style="color: #fff; font-size: 20px"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              style="color: #fff; font-size: 20px"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 20px; font-size: 14px">
+        <p>&copy; 2025 PT. Kolega Surya Medika | Semua Hak Dilindungi</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+
+    <script type="module" src="../static/router.js"></script>
+    <script type="module" src="../static/components/main.js"></script>
+    <script type="module" src="../static/components/home.js"></script>
+    <script type="module" src="../static/components/content.js"></script>
+    <script type="module" src="../static/components/productdetail.js"></script>
+  </body>
+</html>
